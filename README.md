@@ -1,1 +1,1 @@
-# LoveCalculator
+# FriendshipCalculator
