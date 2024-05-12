@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Love Calculator</h1>
+    <p>Enter two names to calculate their love percentage:</p>
+    <input type="text" id="name1" placeholder="Enter first name">
+    <input type="text" id="name2" placeholder="Enter second name">
+    <button onclick="calculateLove()">Calculate Love %</button>
+    <h2 id="result"></h2>
+
+    <script>
+        function calculateLove() {
+            var name1 = document.getElementById('name1').value.trim();
+            var name2 = document.getElementById('name2').value.trim();
+
+            if (name1 === "" || name2 === "") {
+                alert("Please enter both names.");
+                return;
+            }
+
+            var sum = 0;
+            for (var i = 0; i < name1.length; i++) {
+                sum += name1.charCodeAt(i);
+            }
+            // consol.log(sum);
+            for (var i = 0; i < name2.length; i++) {
+                sum += name2.charCodeAt(i);
+            }
+            // consol.log(sum);
+
+            // Generate a random "love percentage" based on the character code sums
+            var loveScore = Math.abs(sum % 100);
+
+            // Add a small bonus percentage if names start with the same letter
+            if (name1[0].toLowerCase() === name2[0].toLowerCase()) {
+                loveScore += 15;
+            }
+
+            // Ensure score does not exceed 100%
+            if (loveScore > 100) {
+                loveScore = 100;
+            }
+
+            document.getElementById('result').textContent = `Love Percentage: ${loveScore}%`;
+        }
+    </script>
+</body>
+</html>
