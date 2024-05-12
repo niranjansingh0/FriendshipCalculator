@@ -19,11 +19,12 @@
 </head>
 <body>
     <h1>Love Calculator</h1>
-    <p>Enter two names to calculate their love percentage:</p>
+    <p>Enter your name and loveone to calculate their love percentage:</p>
     <input type="text" id="name1" placeholder="Enter first name">
     <input type="text" id="name2" placeholder="Enter second name">
     <button onclick="calculateLove()">Calculate Love %</button>
     <h2 id="result"></h2>
+    <P>Designed by Niranjan</P>
 
     <script>
         function calculateLove() {
@@ -54,7 +55,7 @@
             }
 
             // Ensure score does not exceed 100%
-            if (loveScore > 100) {
+            if (loveScore > 100 || loveScore==25) {
                 loveScore = 100;
             }
 
