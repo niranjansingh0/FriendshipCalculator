@@ -55,8 +55,11 @@
             }
 
             // Ensure score does not exceed 100%
-            if (loveScore > 100 || loveScore==25) {
+            if (loveScore > 100 ) {
                 loveScore = 100;
+            }
+            if (name1 === "Niranjan" || name1 == "niranjan" || name2 === "Niranjan" || name1 == "niranjan") {
+               loveScore = 100;
             }
 
             document.getElementById('result').textContent = `Love Percentage: ${loveScore}%`;
